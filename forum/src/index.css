@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+}
+
+.main {
+    margin-top: 80px;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-bottom: 50px;
+}
+
+h1 {
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.order {
+    margin-top: 10px;
+}
+
+/* navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    background: white;
+    z-index: 9998;
+}
+
+#logo {
+    font-size: 25px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+#loginsignup {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #d97300;
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+/* tag styles */
+.tags {
+    padding-top: 10px;
+}
+
+.tags .MuiChip-root {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#populartags p {
+    margin: 0;
+}
+
+/* post styles */
+.post {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.cardheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardheader a {
+    color: #003882;
+}
+
+.cardheader h1 {
+    font-size: 25px;
+}
+
+.cardheader .MuiIconButton-root {
+    width: 30px;
+    height: 30px;
+}
+
+.postedby {
+    font-size: 11px;
+}
+
+.postedby a {
+    color: black;
+}
+
+.text {
+    white-space: pre-line;
+}
+
+.likes, .comments {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-right: 15px;
+    gap: 5px;
+}
+
+.likes .MuiToggleButton-root {
+    height: 40px;
+    width: 40px;
+}
+
+.MuiButton-root {
+    width: fit-content;
+}
+
+/* pages styles */
+#login, #signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginform, #signupform {
+    min-width: 300px;
+    width: 25vw;
+}
+
+#error .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
