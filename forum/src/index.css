@@ -12,8 +12,12 @@ body {
     padding-bottom: 50px;
 }
 
-h1 {
+h1, h4 {
     margin: 0;
+}
+
+h4 {
+    margin-top: 8px;
 }
 
 form {
@@ -65,19 +69,30 @@ a:visited {
     color: inherit;
 }
 
-/* tag styles */
+/* tags styles */
 .tags {
     padding-top: 10px;
 }
 
 .tags .MuiChip-root {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
 }
 
 #populartags p {
     margin: 0;
+}
+
+/* searched users styles */
+.users {
+    padding-top: 10px;
+}
+
+.users .MuiChip-root {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
 }
 
 /* post styles */

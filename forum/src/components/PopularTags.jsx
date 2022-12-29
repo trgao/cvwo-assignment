@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Tags from "./Tags";
 
 const PopularTags = () => {
-    
     const [tags, setTags] = useState([]);
 
     useEffect(() => {

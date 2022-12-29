@@ -9,7 +9,7 @@ function Tag() {
     const urlparam = useParams();
     const name = urlparam.name.split('_').join(' ')
     const [url, setURL] = useState('http://localhost:3000/api/v1/tags/' + name + '?');
-    const baseurl = 'http://localhost:3000/api/v1/tags/' + name + '?';
+    const baseurl = url;
     const [open, setOpen] = useState(false);
 
     return (

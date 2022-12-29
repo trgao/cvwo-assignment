@@ -5,7 +5,7 @@ const Tags = ({ tags }) => {
     const navigate = useNavigate();
 
     const handleClick = (name) => {
-        navigate('/tag/' + name.split(' ').join('_'))
+        navigate('/tag/' + name.split(' ').join('_'));
     };
 
     return (

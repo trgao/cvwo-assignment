@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import PostsList from "../components/PostsList";
@@ -8,7 +8,6 @@ import Order from "../components/Order";
 
 function User() {
     const username = localStorage.getItem('username');
-    const navigate = useNavigate();
     const urlparam = useParams();
     const others = urlparam.username ? true : false;
     const [url, setURL] = useState(others 
@@ -23,9 +22,7 @@ function User() {
             axios.get('http://localhost:3000/api/v1/users/' + urlparam.username)
                 .then(response => {
                     console.log(response);
-                    if (response.data === null) {
-                        navigate('/usernotfound');
-                    } else {
+                    if (response.data !== null) {
                         setName(urlparam.username);
                     }
                 })
@@ -38,12 +35,16 @@ function User() {
     return (
         <div>
             <Navbar />
-            <div className="main">
+            {name === ''
+            ? <div className="main">
+                <h1>User not found</h1>
+            </div>
+            : <div className="main">
                 <h1>user/{name}</h1>
                 <Order setURL={setURL} baseurl={baseurl} />
                 <PostsList url={url} setOpen={setOpen} />
                 <Copied open={open} setOpen={setOpen} />
-            </div>
+            </div>}
         </div>
     );
 }

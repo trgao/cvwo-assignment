@@ -47,7 +47,6 @@ function PostPage() {
                     setCorrectUser(true);
                 }
                 setLoaded(true);
-                console.log(post.comments_count)
             })
             .catch(error => {
                 console.log(error);
@@ -74,7 +73,7 @@ function PostPage() {
 
     useEffect(() => {
         if (loaded) {
-            if (post !== {}) {
+            if (post !== {} && loggedin) {
                 if (liked) {
                     axios.post(likeurl)
                         .then(response => console.log(response))

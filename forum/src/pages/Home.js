@@ -7,7 +7,7 @@ import PostsList from '../components/PostsList';
 
 function Home() {
     const [url, setURL] = useState('http://localhost:3000/api/v1/posts?');
-    const baseurl = 'http://localhost:3000/api/v1/posts?';
+    const baseurl = url;
     const [open, setOpen] = useState(false);
 
     return (
