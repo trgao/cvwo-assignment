@@ -52,12 +52,6 @@ ul {
     margin: 0;
 }
 
-#loginsignup {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
 li {
     list-style: none;
 }
@@ -79,6 +73,7 @@ a:visited {
 .tags .MuiChip-root {
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 5px;
 }
 
 #populartags p {

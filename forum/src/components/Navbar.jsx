@@ -4,6 +4,7 @@ import Logout from "./Logout";
 import { Fragment, useState } from "react";
 import { Autocomplete, TextField, Button, Menu, MenuItem } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -127,6 +128,7 @@ const Navbar = () => {
                     style={{textTransform: "none", color: "#003882"}}
                 >
                     {localStorage.getItem('username')}
+                    <ArrowDropDownIcon />
                 </Button>
                 <Menu
                     anchorEl={anchorEl}
@@ -141,9 +143,7 @@ const Navbar = () => {
                     <Logout handleClose={handleClose} />
                 </Menu>
             </div>
-            : <ul id="loginsignup">
-                <li><Link to="/login" state={{from: location}}><Button>Login</Button></Link></li>
-            </ul>}
+            : <li><Link to="/login" state={{from: location}}><Button variant="contained">Login</Button></Link></li>}
         </nav>
     );
 };

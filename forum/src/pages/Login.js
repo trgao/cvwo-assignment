@@ -50,9 +50,9 @@ function Login() {
         <div>
             <Navbar />
             <div className="main" id="login">
-                {alert ? <Alert severity="error">Wrong email or password</Alert> : <></>}
                 <form onSubmit={handleSubmit} id="loginform">
                     <h1>Login</h1>
+                    {alert ? <Alert severity="error">Wrong email or password</Alert> : <></>}
                     <TextField 
                         type="string" 
                         label="Username" 

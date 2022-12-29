@@ -25,7 +25,7 @@ const Order = ({ setURL, baseurl }) => {
     return (<div className="order">
         <Button 
             onClick={handleClick} 
-            style={{textTransform: "none", color: "#003882"}}
+            style={{textTransform: "none", color: "black"}}
             disableRipple>
             Sort By: {sortby}
             <ArrowDropDownIcon />
