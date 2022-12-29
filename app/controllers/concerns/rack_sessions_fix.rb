@@ -1,3 +1,5 @@
+# Fix from https://github.com/heartcombo/devise/issues/5473 as rails api disables sessions, so this creates a fake session to bypass the error
+
 module RackSessionsFix
     extend ActiveSupport::Concern
     class FakeRackSession < Hash
