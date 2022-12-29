@@ -10,7 +10,7 @@ function Login() {
     const navigate = useNavigate();
     const { state } = useLocation();
     const { from } = state || { from: '/' };
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [alert, setAlert] = useState(false);
 
@@ -19,7 +19,7 @@ function Login() {
 
         const user = {
             user: {
-                email: email, 
+                username: username, 
                 password: password
             }
         };
@@ -54,13 +54,13 @@ function Login() {
                 <form onSubmit={handleSubmit} id="loginform">
                     <h1>Login</h1>
                     <TextField 
-                        type="email" 
-                        label="Email" 
-                        id="email" 
-                        name="email" 
-                        value={email}
+                        type="string" 
+                        label="Username" 
+                        id="username" 
+                        name="username" 
+                        value={username}
                         onKeyDown={handleSpace}
-                        onChange={(e) => setEmail(e.target.value.trim())}
+                        onChange={(e) => setUsername(e.target.value.trim())}
                         required
                     />
                     <TextField 
