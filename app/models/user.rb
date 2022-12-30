@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes
-  devise :database_authenticatable, :registerable, :recoverable, :validatable, :jwt_authenticatable, jwt_revocation_strategy: self
 
   validates_uniqueness_of :username
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, 
+         :jwt_authenticatable, jwt_revocation_strategy: self
 end

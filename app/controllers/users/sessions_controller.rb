@@ -7,12 +7,11 @@ class Users::SessionsController < Devise::SessionsController
     render json: {
       status: { 
         code: 200, message: 'Logged in successfully.',
-        data: { user: UserSerializer.new(current_user).serializable_hash[:data][:attributes] }
+        user: UserSerializer.new(current_user).serializable_hash[:data][:attributes]
       }
     }, status: :ok
   end
 
-  #uses jwt id to find the jwt of logged out user session to revoke the token
   def respond_to_on_destroy
     if request.headers['Authorization'].present?
       jwt_payload = JWT.decode(request.headers['Authorization'].split(' ').last, Rails.application.credentials.devise_jwt_secret_key!).first

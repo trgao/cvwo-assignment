@@ -29,8 +29,8 @@ function Login() {
                 console.log(response);
                 if (response.headers.authorization) {
                     localStorage.setItem('token', response.headers.authorization.split(' ')[1]);
-                    localStorage.setItem('id', response.data.status.data.user.id)
-                    localStorage.setItem('username', response.data.status.data.user.username);
+                    localStorage.setItem('id', response.data.status.user.id)
+                    localStorage.setItem('username', response.data.status.user.username);
                     setLoggedIn(true);
                     navigate(from);
                 } else {
