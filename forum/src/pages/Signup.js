@@ -40,8 +40,8 @@ function Signup() {
             .then(response => {
                 console.log(response);
                 localStorage.setItem('token', response.headers.authorization.split(' ')[1]);
-                localStorage.setItem('id', response.data.data.id)
-                localStorage.setItem('username', response.data.data.username);
+                localStorage.setItem('id', response.data.user.id)
+                localStorage.setItem('username', response.data.user.username);
                 setLoggedIn(true);
                 navigate('/');
             })
