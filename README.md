@@ -1,2 +1,2 @@
-backend rails app, 
-frontend react app is under /forum
+Gao Tianrun <br>
+A0252114W
