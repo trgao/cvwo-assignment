@@ -19,7 +19,7 @@ class Api::V1::PostsController < ApplicationController
     end
 
     if params.has_key?(:author)
-      @posts = Post.where(author: params[:author]).order(@order).limit(10).offset(params[:offset])
+      @posts = Post.order(@order).where(author: params[:author]).limit(10).offset(params[:offset])
     elsif params.has_key?(:q)
       @posts = Post.order(@order).search_by_title(params[:q]).limit(10).offset(params[:offset])
     else

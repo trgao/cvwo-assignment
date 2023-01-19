@@ -18,6 +18,20 @@ class Api::V1::UsersController < ApplicationController
     render json: @user.to_json(except: :email)
   end
 
+  # update username
+  def update
+    if @user.update(user_params)
+      @posts = Post.where(:user_id => @user.id)
+      @posts.each do |post|
+        post.update(:author => @user.username)
+      end
+      
+      render json: @user
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /users/:username
   def destroy
     @user.destroy
@@ -26,5 +40,9 @@ class Api::V1::UsersController < ApplicationController
   private
   def set_user
     @user = User.find_by_username(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:id, :username)
   end
 end
