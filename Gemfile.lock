@@ -70,13 +70,6 @@ GEM
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    coffee-rails (5.0.0)
-      coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     date (3.3.1)
@@ -103,8 +96,6 @@ GEM
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
     erubi (1.11.0)
-    execjs (2.8.1)
-    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -193,30 +184,10 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
-    sprockets (4.2.0)
-      concurrent-ruby (~> 1.0)
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.4.2)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      sprockets (>= 3.0.0)
     thor (1.2.1)
-    tilt (2.0.11)
     timeout (0.3.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     warden (1.2.9)
       rack (>= 2.0.9)
     warden-jwt_auth (0.7.0)
@@ -236,7 +207,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  coffee-rails
   debug
   devise
   devise-jwt
@@ -247,9 +217,7 @@ DEPENDENCIES
   pundit (~> 2.2)
   rack-cors
   rails (~> 7.0.4)
-  sass-rails
   tzinfo-data
-  uglifier
 
 RUBY VERSION
    ruby 3.1.3p185
