@@ -56,3 +56,7 @@ end
 
 
 gem "pundit", "~> 2.2"
+
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
