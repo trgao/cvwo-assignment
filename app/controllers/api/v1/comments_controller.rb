@@ -4,6 +4,7 @@ class Api::V1::CommentsController < ApplicationController
 
   # GET /comments
   def index
+    # custom order of comments
     if params.has_key?(:order)
       if params[:order] == 'Top'
         @order = 'likes_count DESC'

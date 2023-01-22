@@ -16,6 +16,7 @@ class Api::V1::TagsController < ApplicationController
 
   # GET /tags/:name
   def show
+    # custom order of posts
     if params.has_key?(:order)
       if params[:order] == 'Top'
         @order = 'likes_count DESC'

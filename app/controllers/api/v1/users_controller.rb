@@ -21,6 +21,7 @@ class Api::V1::UsersController < ApplicationController
   # update username
   def update
     if @user.update(user_params)
+      # changes username and author field of posts
       @posts = Post.where(:user_id => @user.id)
       @posts.each do |post|
         post.update(:author => @user.username)

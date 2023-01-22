@@ -4,6 +4,7 @@ class Api::V1::PostsController < ApplicationController
 
   # GET /posts
   def index
+    # custom order of posts
     if params.has_key?(:order)
       if params[:order] == 'Top'
         @order = 'likes_count DESC'
@@ -31,6 +32,7 @@ class Api::V1::PostsController < ApplicationController
 
   # GET /posts/1:user_id
   def show
+    # to determine if that specific user has liked a post
     if params.has_key?(:user_id)
       render json: {
         title: @post.title, 
@@ -55,7 +57,7 @@ class Api::V1::PostsController < ApplicationController
     tagArray = JSON.parse(params[:tags])
 
     tagArray.each do |tag|
-      #checks if tag exists to associate to post, if not create a new tag and associate to post
+      # checks if tag exists to associate to post, if not create a new tag and associate to post
       if Tag.exists?(name: tag)
         myTag = Tag.find_by_name(tag)
         @post.tags << myTag
@@ -80,14 +82,14 @@ class Api::V1::PostsController < ApplicationController
     newTags = JSON.parse(params[:tags])
 
     oldTags.each do |tag|
-      #checks if tag is in not new tags array and removes association
+      # checks if tag is in not new tags array and removes association
       if !newTags.include?(tag)
         @post.tags.delete(tag)
       end
     end
 
     newTags.each do |tag|
-      #checks if tag exists to update, if not create a new tag and associate to post
+      # checks if tag exists to update, if not create a new tag and associate to post
       if Tag.exists?(name: tag)
         myTag = Tag.find_by_name(tag)
         @post.tags << myTag
